@@ -1,0 +1,24 @@
+<p>
+  <strong>タイプ</strong>
+  <input class="form-control" id="disabledInput" type="text" placeholder='<%= @board.amount_type %>' disabled>
+</p>
+
+<p>
+  <strong>金額</strong>
+  <input class="form-control" id="disabledInput" type="text" placeholder='<%= @board.amount %>' disabled>
+</p>
+
+<p>
+  <strong>日付</strong>
+  <input class="form-control" id="disabledInput" type="text" placeholder='<%= @board.io_date %>' disabled>
+</p>
+
+<p>
+  <strong>備考</strong>
+  <input class="form-control" id="disabledInput" type="text" placeholder='<%= @board.details %>' disabled>
+</p>
+
+<h3>
+  <%= link_to '編集', edit_board_path(@board) %> |
+  <%= link_to '戻る', boards_path %>
+</h3>

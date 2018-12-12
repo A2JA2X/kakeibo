@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="panel-heading">
+      <h3>今月</h3>
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">タイプ</th>
+          <th scope="col">金額</th>
+          <th scope="col">日付</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @boards.each do |board| %>
+          <tr>
+            <th scope="row"><%= board.id %></th>
+            <td><%= board.amount_type %></td>
+            <td><%= board.amount %></td>
+            <td><%= board.io_date %></td>
+            <i>
+              <td><%= link_to 'visibility', board, :class => "material-icons" %></td>
+              <td><%= link_to 'edit', edit_board_path(board), :class => "material-icons" %></td>
+              <td><%= link_to 'delete', board, method: :delete, data: { confirm: '削除しますか？' }, :class => "material-icons" %></td>
+            </i>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-4">
+    <h3>合計支出：<%= @total_spend %></h3>
+    <%= link_to '新規', new_board_path, :class => "btn btn-primary btn-lg btn-block" %>
+  </div>
+</div>
